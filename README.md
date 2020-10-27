@@ -39,6 +39,7 @@ To execute the server and client with SSL encryption you must do two things\:
 keytool -genkey -alias signFiles -keystore examplestore
 ```
 - Second, execute the server and client with the '-s' switch option and specify the keystore and password.
+Currently, this version does not support specifying the keystore via path, so you must use java switch options as follows:
 
 ServerRat.jar
 ```bash
@@ -53,8 +54,6 @@ ClientRat.jar
 java -jar -Djavax.net.ssl.trustStore=examplestore -Djavax.net.ssl.trustStorePassword=password ClientRat.jar -t 127.0.0.1 -p 443 -s 
 simpleRat# 
 ```
-
-Currently, this version does not support specifying the keystore via path, so you must use java switch options as follows:
 
 
 ## Contributing
